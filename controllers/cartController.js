@@ -38,4 +38,15 @@ const getAllCart = async (req, res) => {
   }
 };
 
-module.exports = { addToCart, getAllCart };
+const deleteToCart = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const carts = await Carts.findOneAndRemove({ _id: id });
+
+    res.send(carts);
+  } catch (error) {
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+module.exports = { addToCart, getAllCart, deleteToCart };

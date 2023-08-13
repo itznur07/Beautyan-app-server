@@ -7,7 +7,14 @@ const port = process.env.PORT || 5000;
 require("dotenv").config();
 
 /** Middleware */
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+    credentials: true,
+    optionSuccessStatus: 200,
+  })
+);
+
 app.use(express.json());
 
 /** Database Connection */
