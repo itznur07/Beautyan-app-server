@@ -3,6 +3,7 @@ const app = express();
 const cors = require("cors");
 const connectDB = require("./config/db");
 const cartRoute = require("./routes/cartRoute");
+const productsRoute = require("./routes/productsRoute");
 const port = process.env.PORT || 5000;
 require("dotenv").config();
 
@@ -22,6 +23,7 @@ connectDB();
 
 /** Routes */
 app.use("/", cartRoute);
+app.use("/", productsRoute);
 
 app.get("/", (req, res) => {
   res.send("Hello Beautyans");
