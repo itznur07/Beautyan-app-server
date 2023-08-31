@@ -22,8 +22,8 @@ app.use(express.json());
 connectDB();
 
 /** Routes */
-app.use("/", cartRoute);
-app.use("/", productsRoute);
+app.use("/", cartRoute); /** <!-- cartsController --> */
+app.use("/", productsRoute); /** <!-- productsController --> */
 
 app.get("/", (req, res) => {
   res.send("Hello Beautyans");

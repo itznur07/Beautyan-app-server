@@ -9,8 +9,18 @@ const getProducts = async (req, res) => {
       res.status(404).json({ message: "Data not founded" });
     }
   } catch (error) {
-    res.status(500).json({ message: "Internal server error" });
+    res.status(500).json({ message: "404 Not Found!" });
   }
 };
 
-module.exports = { getProducts };
+const getProduct = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const product = await Products.findOne({ _id: id });
+    res.send(product);
+  } catch (error) {
+    res.status(404).json({ message: "404 Not Found!" });
+  }
+};
+
+module.exports = { getProducts, getProduct };
