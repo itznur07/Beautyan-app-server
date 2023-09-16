@@ -25,6 +25,8 @@ connectDB();
 app.use("/", cartRoute); /** <!-- cartsController --> */
 app.use("/", productsRoute); /** <!-- productsController --> */
 
+
+/** Default response in api homepage */
 app.get("/", (req, res) => {
   res.send("Hello Beautyans");
 });
