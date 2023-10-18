@@ -24,4 +24,3 @@ const getProduct = async (req, res) => {
 };
 
 module.exports = { getProducts, getProduct };
-// done this block
