@@ -39,7 +39,7 @@ const getAllCart = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
-// fucntion for deleted to cart
+// fucntion for deleted to cart mm
 const deleteToCart = async (req, res) => {
   try {
     const id = req.params.id;
