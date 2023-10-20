@@ -1,3 +1,4 @@
+// carts model for api
 const Carts = require("../models/carts");
 
 const addToCart = async (req, res) => {
